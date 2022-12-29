@@ -2,12 +2,10 @@
 The Command design pattern.
 """
 
+from typing import Protocol
 
-import abc
 
-
-class Command(abc.ABC):
-    @abc.abstractmethod
+class Command(Protocol):
     def execute(self) -> None:
         ...
 
@@ -32,11 +30,11 @@ class Button():
         self._click_action = click_action
 
 
-class SayHello(Command):
+class SayHello:
     def execute(self) -> None:
         print("Hello!")
 
 
-class SayGoodbye(Command):
+class SayGoodbye:
     def execute(self) -> None:
         print("Bye!")
